@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import { useBankDataStore } from '@/stores/bankData'
+import { useTransactionDataStore } from '@/stores/transactionData'
 
-const bankDataStore = useBankDataStore()
+const transactionDataStore = useTransactionDataStore()
 </script>
 
 <template>
-  <h1>Su saldo actual es de: ${{ bankDataStore.data[0].savings }}</h1>
-  <button @click="bankDataStore.depositar"
-  :disabled="bankDataStore.data[0].savings >= 50">Depositar</button>
+  <h1>Su saldo actual es de: ${{ transactionDataStore.data[0].savings }}</h1>
+  <button @click="transactionDataStore.deposit"
+  :disabled="transactionDataStore.data[0].savings >= 50">Depositar</button>
 
-  <button @click="bankDataStore.retirar"
-  :disabled="bankDataStore.data[0].savings <= 0">Retirar</button>
-<div v-for="item in bankDataStore.data">
+  <button @click="transactionDataStore.withdraw"
+  :disabled="transactionDataStore.data[0].savings <= 0">Retirar</button>
+<div v-for="item in transactionDataStore.data">
   <ul>
     <li>
     <span v-if="item.currentAmount >= 0">
@@ -57,4 +57,4 @@ li {
   list-style-type: none;
 }
 
-</style>
+</style>@/stores/transactionData
