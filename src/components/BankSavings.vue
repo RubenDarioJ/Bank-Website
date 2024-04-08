@@ -6,19 +6,19 @@ const bankDataStore = useBankDataStore()
 </script>
 
 <template>
-  <h1>Su saldo actual es de: ${{ bankDataStore.data[0].ahorros }}</h1>
+  <h1>Su saldo actual es de: ${{ bankDataStore.data[0].savings }}</h1>
   <button @click="bankDataStore.depositar"
-  :disabled="bankDataStore.data[0].ahorros >= 50">Depositar</button>
+  :disabled="bankDataStore.data[0].savings >= 50">Depositar</button>
 
   <button @click="bankDataStore.retirar"
-  :disabled="bankDataStore.data[0].ahorros <= 0">Retirar</button>
+  :disabled="bankDataStore.data[0].savings <= 0">Retirar</button>
 <div v-for="item in bankDataStore.data">
   <ul>
-    <!-- <li>Saldo actual: {{ item.saldo }} || Acabas de depositar {{ item.monto }}</li> -->
+    <!-- <li>Saldo actual: {{ item.saldo }} || Acabas de depositar {{ item.currentAmount }}</li> -->
     <li>
-    <span v-if="item.monto >= 0">Usted ha depositado $</span>
+    <span v-if="item.currentAmount >= 0">Usted ha depositado $</span>
     <span v-else>Usted ha retirado $</span>
-      {{ item.monto }} | Saldo actual {{ item.saldo }}
+      {{ item.currentAmount }} | Saldo actual {{ item.balance }}
     <RouterLink :to="`/info/${item.id}`">
     <p>Ver mas información</p>
    </RouterLink>

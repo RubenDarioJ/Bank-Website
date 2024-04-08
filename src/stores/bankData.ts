@@ -4,27 +4,27 @@ export const useBankDataStore = defineStore('bankData', {
   state: () => ({
     data: <Bank[]> [
       {
-        ahorros: 0,
-        cantidad: 10,
+        savings: 0,
+        amount: 10,
       },
     ],
     counter: 1,
   }),
  actions: {
     depositar() {
-      this.data[0].ahorros += this.data[0].cantidad;
+      this.data[0].savings += this.data[0].amount;
       this.data.push({
         id: this.generateUniqueId(),
-        monto: this.data[0].cantidad,
-        saldo: this.data[0].ahorros,
+        currentAmount: this.data[0].amount,
+        balance: this.data[0].savings,
       });
     },
     retirar() {
-      this.data[0].ahorros -= this.data[0].cantidad;
+      this.data[0].savings -= this.data[0].amount;
       this.data.push({
         id: this.generateUniqueId(),
-        monto: -this.data[0].cantidad,
-        saldo: this.data[0].ahorros,
+        currentAmount: -this.data[0].amount,
+        balance: this.data[0].savings,
       });
     },
     generateUniqueId() {
