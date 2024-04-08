@@ -14,7 +14,6 @@ const bankDataStore = useBankDataStore()
   :disabled="bankDataStore.data[0].savings <= 0">Retirar</button>
 <div v-for="item in bankDataStore.data">
   <ul>
-    <!-- <li>Saldo actual: {{ item.saldo }} || Acabas de depositar {{ item.currentAmount }}</li> -->
     <li>
     <span v-if="item.currentAmount >= 0">Usted ha depositado $</span>
     <span v-else>Usted ha retirado $</span>
