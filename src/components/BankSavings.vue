@@ -22,9 +22,9 @@ const transactionDataStore = useTransactionDataStore()
     <ul>
       <li>
       <span v-if="item.currentAmount >= 0">
-        Usted ha depositado ${{ item.currentAmount }} | Saldo actual {{ item.balance }}  </span>
+        Usted ha depositado ${{ item.currentAmount }} | Saldo actual ${{ item.balance }}  </span>
       <span v-else>
-        Usted ha retirado ${{ item.currentAmount }} | Saldo actual {{ item.balance }} </span>
+        Usted ha retirado ${{ item.currentAmount }} | Saldo actual ${{ item.balance }} </span>
       <RouterLink :to="`/info/${item.id}`">
       <p>Ver mas información</p>
     </RouterLink>
