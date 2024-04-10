@@ -18,6 +18,11 @@ import { RouterLink } from 'vue-router'
         </RouterLink>
         </li>
         <li class="nav-item">
+        <RouterLink :to="`/balance`">
+          <a class="nav-link">Consultar</a>
+        </RouterLink>
+        </li>
+        <li class="nav-item">
         <RouterLink :to="`/help`">
           <a class="nav-link">Ayuda</a>
         </RouterLink>
