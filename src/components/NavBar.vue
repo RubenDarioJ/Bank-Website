@@ -27,7 +27,7 @@ import { RouterLink } from 'vue-router'
           <a class="nav-link">Ayuda</a>
         </RouterLink>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ver Mas
           </a>
@@ -37,7 +37,7 @@ import { RouterLink } from 'vue-router'
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li> -->
