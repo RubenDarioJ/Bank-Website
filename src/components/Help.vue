@@ -1,7 +1,7 @@
 <script setup lang="ts">
 </script>
 <template>
-    <h1 class="display-2">¿Como podemos ayudarte?</h1>
+    <h1 class="display-2">¿Cómo podemos ayudarte?</h1>
     <!-- <div class="text-body-secondary">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium at architecto labore recusandae saepe dolorum exercitationem soluta minima, ab officia corrupti provident velit sit beatae veniam natus rem iure. Placeat.</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium at architecto labore recusandae saepe dolorum exercitationem soluta minima, ab officia corrupti provident velit sit beatae veniam natus rem iure. Placeat.</p>
