@@ -6,18 +6,20 @@ const transactionDataStore = useTransactionDataStore()
 </script>
 
 <template>
+<div class="center">
   <h1>
     Su saldo actual es de:<span
     :class="transactionDataStore.data[0].savings >= 1 ? 'positive' : ''">
       ${{ transactionDataStore.data[0].savings }}
     </span>
   </h1>
-  <button @click="transactionDataStore.deposit"
-  :disabled="transactionDataStore.data[0].savings >= 50">Depositar</button>
+  <div class="buttons-container">
+    <button @click="transactionDataStore.deposit"
+    :disabled="transactionDataStore.data[0].savings >= 50">Depositar</button>
 
-  <button @click="transactionDataStore.withdraw"
-  :disabled="transactionDataStore.data[0].savings <= 0">Retirar</button>
-
+    <button @click="transactionDataStore.withdraw"
+    :disabled="transactionDataStore.data[0].savings <= 0">Retirar</button>
+  </div>
   <div v-for="item in transactionDataStore.data">
     <ul>
       <li>
@@ -31,9 +33,15 @@ const transactionDataStore = useTransactionDataStore()
       </li>
     </ul>
   </div>
-
+</div>
 </template>
 <style scoped>
+.center {
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  justify-content: center;
+  align-items: center;
+}
 .savings {
   border: 5px solid;
 }
@@ -52,6 +60,13 @@ button {
   font-size: 16px;
 }
 
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
 button:disabled,
 button[disabled]{
   border: 1px solid #999999;
@@ -67,4 +82,4 @@ li {
   color: rgb(12, 187, 12);
 }
 
-</style>@/stores/transactionData
+</style>
