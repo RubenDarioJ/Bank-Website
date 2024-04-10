@@ -6,8 +6,13 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/balance',
+      path: '/',
       name: 'home',
+      component: () => import('@/components/Card.vue')
+    },
+    {
+      path: '/balance',
+      name: 'balance',
       component: Savings
     },
     {
