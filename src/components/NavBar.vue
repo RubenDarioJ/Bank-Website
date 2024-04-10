@@ -11,7 +11,7 @@ import { RouterLink } from 'vue-router'
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 center">
         <li class="nav-item">
           <RouterLink :to="`/`">
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
@@ -51,6 +51,12 @@ import { RouterLink } from 'vue-router'
 </nav>
 </template>
 <style scoped>
-
+@media (max-width: 1000px) {
+  .center {
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
 
 </style>

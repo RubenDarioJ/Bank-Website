@@ -39,7 +39,7 @@
   </div>
 </div>
 </template>
-<style>
+<style scoped>
 .grid-center {
   max-width: fit-content;
   margin-left: auto;
