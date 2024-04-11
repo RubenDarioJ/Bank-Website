@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { useTransactionDataStore } from '@/stores/transactionData'
+import { useRoute } from 'vue-router'
+import { useTransactionsStore } from '@/stores/transactions'
 
-const transactionDataStore = useTransactionDataStore()
+const transactionsStore = useTransactionsStore()
+const route = useRoute()
+
+const transcationId = <string> route.params.id
+const transaction = transactionsStore.getTransaction(transcationId)
 </script>
 
 <template>
-    <h1>Información de esta transacción {{ transactionDataStore.data[0].currentAmount }}</h1>
-    <div v-for="item in transactionDataStore.data">
-       <p>Usted aprobó un retiro por un total: ${{ item.currentAmount }} | Su saldo actual es de ${{ item.balance }}</p> 
-    </div>
+  <h1>Información de esta transacción {{ transaction?.amount }}</h1>
+  <h2>Fecha: {{ transaction?.creationTime }}</h2>
+  <p>
+    Usted aprobó un {{ transaction?.type === 'deposit' ? 'deposito' : 'retiro' }} 
+    por un total: {{ transaction?.type === 'deposit' ? '+' : '-' }}${{ transaction?.amount }} 
+    | Su saldo actual es de ${{ transaction?.currentBalance }}</p>
 </template>
-
-<style scoped>
-
-</style>@/stores/transactionData
